@@ -251,7 +251,7 @@ function submitStuff()
             "srn": "SRN",
             "email": "E-mail",
             "phone": "Phone Number",
-            "studentType": "Student Type",
+            "home": "Student Type",
             "amenities": "Amenities",
             "rating-overall": "Overall Rating",
             "rating-amenities": "Amenities Rating",
