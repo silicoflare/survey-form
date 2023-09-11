@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'Hurmit';
+    src: url("hurmit.otf");
+}
+
+label   {
+    text-align: left;
+}
+
+label.middle    {
+    text-align: center;
+}
+
+input, select, option      {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-family: 'Hurmit', monospace;
+}
+
+.checked-overall    {
+    color: #EF7F1A;
+}
+
+.checked-amenities    {
+    color: rgb(97, 97, 97);
+}
+
+.checked-teaching   {
+    color: purple;
+}
+
+.checked-syllabus   {
+    color: #ff0000;
+}
+
+.checked-food   {
+    color: #923702;
+}
+
+.checked-events   {
+    color: #00FFFF;
+}

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PESU Students' Survey</title>
+        <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+        </style>
+        <link rel="stylesheet" href="output.css">
+        <script src="script.js"></script>
+        <script src="https://kit.fontawesome.com/8648bbaffe.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body class="flex flex-col p-10 justify-center text-center font-[Poppins] font-bold" onload="init()">
+        <header class="flex flex-row justify-center text-center">
+            <img src="pes_logo.png" alt="PES logo" class="w-1/12 h-1/12">
+        </header>
+        <h1 class="text-4xl uppercase text-[#313C71]">PES University</h1>
+        <h2 class="text-xl uppercase font text-[#EF7F1A]">Student Satisfaction Survey</h2>
+        <br><br>
+        <main class="flex justify-center text-xl leading-loose font-light py-10 px-16 flex-col">
+            <p class="">
+                It has been one successful year since you have joined PES University. You have learnt, from teachers, from
+                friends, and from mistakes. You are now an integral part of PESU, and we would like to take this ocassion to
+                know how good your journey in PESU has been.
+            </p>
+
+
+            <br><br>
+
+            <form action="" method="post" class="flex justify-center rounded-md p-5" id="form-da">
+                <div class="grid grid-cols-2 w-4/5 gap-x-10">
+                    <label for="name">Student name</label>
+                    <label for="gender">Gender</label>
+                    <input type="text" name="name" id="name" required placeholder="Name">
+                    <select name="gender" id="gender" required>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+
+                    <div class="">&emsp;</div>
+                    <div class="">&emsp;</div>
+
+                    <label for="prn">PRN</label>
+                    <label for="srn">SRN</label>
+                    <input type="text" name="prn" id="prn" required placeholder="PES1202001234">
+                    <input type="text" name="srn" id="srn" required placeholder="PES1UG20CS123">
+
+                    <div class="">&emsp;</div>
+                    <div class="">&emsp;</div>
+
+                    <label for="branch">Branch</label>
+                    <div class="">&emsp;</div>
+                    <input type="text" class="col-span-2" id="branch" disabled placeholder="Enter SRN">
+
+                    <label for="campus">Campus</label>
+                    <div class="">&emsp;</div>
+                    <input type="text" class="col-span-2" id="campus" disabled placeholder="Enter SRN">
+
+                    <div class="">&emsp;</div>
+                    <div class="">&emsp;</div>
+
+                    <label for="email">Email</label>
+                    <label for="phone">Phone Number</label>
+                    <input type="text" id="email" required placeholder="E-mail">
+                    <input type="number" id="phone" required placeholder="Phone Number">
+
+                    <div class="">&emsp;</div>
+                    <div class="">&emsp;</div>
+
+                    <label for="campus" class="col-span-2 text-center"><h2 class="text-2xl font-bold">Student Type</h2></label>
+                    
+                    <span class=""><label for="day-scholar"><input type="radio" name="home" id="day-scholar" value="day-scholar"> Day Scholar</label></span>
+                    <span class=""><label for="hostelite"><input type="radio" name="home" id="hostelite" value="hostelite"> Hostelite</label></span>
+                    
+                    <div class="">&emsp;</div>
+                    <div class="">&emsp;</div>
+
+                    <label for="campus" class="col-span-2 text-center"><h2 class="text-2xl font-bold">Amenities Used</h2></label>
+
+                    <span class="col-span-2 text-left px-64"><label for="gym"><input type="checkbox" name="amenities" id="gym"> Gym</label></span>
+                    <span class="col-span-2 text-left px-64"><label for="library"><input type="checkbox" name="amenities" id="library"> Library</label></span>
+                    <span class="col-span-2 text-left px-64"><label for="study"><input type="checkbox" name="amenities" id="study"> Study Area/Silent Reflections</label></span>
+                    <span class="col-span-2 text-left px-64"><label for="sports"><input type="checkbox" name="amenities" id="sports"> Sports Area</label></span>
+                    <span class="col-span-2 text-left px-64"><label for="cafeterias"><input type="checkbox" name="amenities" id="cafeterias"> Cafeterias</label></span>
+                    <span class="col-span-2 text-left px-64"><label for="parking"><input type="checkbox" name="amenities" id="parking"> Parking</label></span>
+
+                    <div class="">&emsp;</div>
+                    <div class="">&emsp;</div>
+                    
+                    <label for="campus" class="col-span-2 text-center"><h2 class="text-2xl font-bold">Ratings</h2></label>
+
+
+                    <label class="middle">Overall</label>
+                    <label class="middle">Amenities</label>
+
+                    <span class="" id="overall-rating" value="0" onmouseleave="spark('overall', -1)">
+                        <i class="fa-solid fa-star" id="overall-1" onmouseenter="spark('overall', 1)" onclick="select('overall', 1)"></i>
+                        <i class="fa-solid fa-star" id="overall-2" onmouseenter="spark('overall', 2)" onclick="select('overall', 2)"></i>
+                        <i class="fa-solid fa-star" id="overall-3" onmouseenter="spark('overall', 3)" onclick="select('overall', 3)"></i>
+                        <i class="fa-solid fa-star" id="overall-4" onmouseenter="spark('overall', 4)" onclick="select('overall', 4)"></i>
+                        <i class="fa-solid fa-star" id="overall-5" onmouseenter="spark('overall', 5)" onclick="select('overall', 5)"></i>
+                    </span>
+
+                    <span class="" id="amenities-rating" value="0" onmouseleave="spark('amenities', -1)">
+                        <i class="fa-solid fa-dumbbell" id="amenities-1" onmouseenter="spark('amenities', 1)" onclick="select('amenities', 1)"></i>
+                        <i class="fa-solid fa-dumbbell" id="amenities-2" onmouseenter="spark('amenities', 2)" onclick="select('amenities', 2)"></i>
+                        <i class="fa-solid fa-dumbbell" id="amenities-3" onmouseenter="spark('amenities', 3)" onclick="select('amenities', 3)"></i>
+                        <i class="fa-solid fa-dumbbell" id="amenities-4" onmouseenter="spark('amenities', 4)" onclick="select('amenities', 4)"></i>
+                        <i class="fa-solid fa-dumbbell" id="amenities-5" onmouseenter="spark('amenities', 5)" onclick="select('amenities', 5)"></i>
+                    </span>
+
+                    <div class="">&emsp;</div>
+                    <div class="">&emsp;</div>
+
+                    <label class="middle">Teaching</label>
+                    <label class="middle">Syllabus and Study Resources</label>
+
+                    <span class="" id="teaching-rating" value="0" onmouseleave="spark('teaching', -1)">
+                        <i class="fa-solid fa-chalkboard-user" id="teaching-1" onmouseenter="spark('teaching', 1)" onclick="select('teaching', 1)"></i>
+                        <i class="fa-solid fa-chalkboard-user" id="teaching-2" onmouseenter="spark('teaching', 2)" onclick="select('teaching', 2)"></i>
+                        <i class="fa-solid fa-chalkboard-user" id="teaching-3" onmouseenter="spark('teaching', 3)" onclick="select('teaching', 3)"></i>
+                        <i class="fa-solid fa-chalkboard-user" id="teaching-4" onmouseenter="spark('teaching', 4)" onclick="select('teaching', 4)"></i>
+                        <i class="fa-solid fa-chalkboard-user" id="teaching-5" onmouseenter="spark('teaching', 5)" onclick="select('teaching', 5)"></i>
+                    </span>
+
+                    <span class="" id="syllabus-rating" value="0" onmouseleave="spark('syllabus', -1)">
+                        <i class="fa-solid fa-book" id="syllabus-1" onmouseenter="spark('syllabus', 1)" onclick="select('syllabus', 1)"></i>
+                        <i class="fa-solid fa-book" id="syllabus-2" onmouseenter="spark('syllabus', 2)" onclick="select('syllabus', 2)"></i>
+                        <i class="fa-solid fa-book" id="syllabus-3" onmouseenter="spark('syllabus', 3)" onclick="select('syllabus', 3)"></i>
+                        <i class="fa-solid fa-book" id="syllabus-4" onmouseenter="spark('syllabus', 4)" onclick="select('syllabus', 4)"></i>
+                        <i class="fa-solid fa-book" id="syllabus-5" onmouseenter="spark('syllabus', 5)" onclick="select('syllabus', 5)"></i>
+                    </span>
+
+                    <div class="">&emsp;</div>
+                    <div class="">&emsp;</div>
+
+                    <label class="middle">Food and Beverages</label>
+                    <label class="middle">Events</label>
+
+                    <span class="" id="food-rating" value="0" onmouseleave="spark('food', -1)">
+                        <i class="fa-solid fa-burger" id="food-1" onmouseenter="spark('food', 1)" onclick="select('food', 1)"></i>
+                        <i class="fa-solid fa-burger" id="food-2" onmouseenter="spark('food', 2)" onclick="select('food', 2)"></i>
+                        <i class="fa-solid fa-burger" id="food-3" onmouseenter="spark('food', 3)" onclick="select('food', 3)"></i>
+                        <i class="fa-solid fa-burger" id="food-4" onmouseenter="spark('food', 4)" onclick="select('food', 4)"></i>
+                        <i class="fa-solid fa-burger" id="food-5" onmouseenter="spark('food', 5)" onclick="select('food', 5)"></i>
+                    </span>
+
+                    <span class="" id="events-rating" value="0" onmouseleave="spark('events', -1)">
+                        <i class="fa-solid fa-gift" id="events-1" onmouseenter="spark('events', 1)" onclick="select('events', 1)"></i>
+                        <i class="fa-solid fa-gift" id="events-2" onmouseenter="spark('events', 2)" onclick="select('events', 2)"></i>
+                        <i class="fa-solid fa-gift" id="events-3" onmouseenter="spark('events', 3)" onclick="select('events', 3)"></i>
+                        <i class="fa-solid fa-gift" id="events-4" onmouseenter="spark('events', 4)" onclick="select('events', 4)"></i>
+                        <i class="fa-solid fa-gift" id="events-5" onmouseenter="spark('events', 5)" onclick="select('events', 5)"></i>
+                    </span>
+
+                    <div class="">&emsp;</div>
+                    <div class="">&emsp;</div>
+
+                    <div class="col-span-2 fex flex-col justify-evenly text-center">
+                        <button type="button" onclick="submitStuff()" class="px-7 py-1 rounded-md mx-10 border-black border-2">Submit</button>
+                        <button type="button" onclick="resetAll()" class="px-7 py-1 rounded-md mx-10 border-black border-2">Reset</button>
+                    </div>
+                </div>
+            </form>
+        </main>
+    </body>
+</html>
